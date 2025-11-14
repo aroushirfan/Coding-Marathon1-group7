@@ -22,6 +22,11 @@ function ContactListManager() {
     e.preventDefault();
     setContacts([...contacts, { id: Date.now(), ...form }]);
   };
+
+  const deleteContact = (id) => {
+    setContacts(contacts.filter(c => c.id !== id));
+  };
+
   return(
    <div>
       <h2> Contact List  </h2>
@@ -61,23 +66,35 @@ function ContactListManager() {
         />
         <input
         name ="Favorite"
-        placeholder ="checkbox"
+        type ="checkbox"
         checked = {form.Favorite}
         onChange = {handleChange}
         />
       
       <button>Add me</button>
     </form>
-    <div>
+    <div className="contact-output">
+        <h3>Saved Contacts</h3>
+
+        {contacts.length === 0 && <p>No contacts yet.</p>}
+
+    
   {contacts.map((c) => (
-    <div key={c.id}>
+    <div key={c.id} className="contact-card">
       <p><strong>Name:</strong> {c.Name}</p>
       <p><strong>Job Title:</strong> {c.Job_title}</p>
       <p><strong>Birthday:</strong> {c.Birthday}</p>
       <p><strong>Notes:</strong> {c.Notes}</p>
       <p><strong>Website:</strong> {c.Website}</p>
       <p><strong>Favorite:</strong> {c.Favorite ? "Yes" : "No"}</p>
-      <hr />
+      
+
+      <button 
+      className="delete-btn"
+      onClick={() => deleteContact(c.id)}
+    >
+      Delete
+    </button>
     </div>
   ))}
 </div>
@@ -88,4 +105,4 @@ function ContactListManager() {
   
 }
  
-export default ContactListManager
+export default ContactListManager;
