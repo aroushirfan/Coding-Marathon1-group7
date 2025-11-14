@@ -1,5 +1,5 @@
 # Self-Assessment: SignUpPage.jsx
-
+Sachin
 ## 1. Functionality
 
 - **Does the component meet the requirements?**

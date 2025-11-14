@@ -1,5 +1,5 @@
-# Self-Assessment: BookCollectionManager.jsx
-
+# Self-Assessment: ContactList.jsx
+Silva
 ## 1. Functionality
 - **Does the component meet the requirements?**
   - [ ] Does it handle all the specified features (e.g., adding, removing, or updating books)?

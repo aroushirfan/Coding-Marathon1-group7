@@ -1,5 +1,5 @@
-# Self-Assessment: BookCollectionManager.jsx
-
+# Self-Assessment: ShoppingCart.jsx
+Ahmad
 ## 1. Functionality
 - **Does the component meet the requirements?**
   The component meets the required functionality by allowing users to add and delete shopping cart items. The form uses controlled inputs, and empty submissions are prevented to avoid invalid entries. No bugs were found during testing, and the component behaves as expected. It integrates smoothly with the rest of the application, and props and state are managed properly to update the UI in real time.

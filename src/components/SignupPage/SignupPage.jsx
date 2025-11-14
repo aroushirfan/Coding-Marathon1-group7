@@ -57,14 +57,20 @@ const Button = ({ children, type = "button", ...rest }) => (
   </button>
 );
 
-const SignUpForm = () => {
+const SignUpForm = ({ addCard }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ username, email, password });
+
+    addCard(username);
+
+    // Reset fields
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -77,18 +83,21 @@ const SignUpForm = () => {
         onChange={(e) => setUsername(e.target.value)}
         required
       />
+
       <EmailInput
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
+
       <PasswordInput
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
+
       <Button type="submit">Sign Up</Button>
     </form>
   );
@@ -102,10 +111,37 @@ const Layout = ({ title, subtitle, children }) => (
   </div>
 );
 
-const SignupPage = () => (
-  <Layout title="Create an Account" subtitle="Join us today!">
-    <SignUpForm />
-  </Layout>
-);
+const SignupPage = () => {
+  const [cards, setCards] = useState([]);
+
+  const addCard = (username) => {
+    const newCard = {
+      id: Date.now(),
+      name: username,
+    };
+    setCards([...cards, newCard]);
+  };
+
+  const deleteCard = (id) => {
+    setCards(cards.filter((c) => c.id !== id));
+  };
+
+  return (
+    <Layout title="Create an Account" subtitle="Join us today!">
+      <SignUpForm addCard={addCard} />
+
+      <div className="card-list">
+        {cards.map((card) => (
+          <div key={card.id} className="welcome-card">
+            <h3>Welcome, {card.name}! 🎉</h3>
+            <button className="delete-btn" onClick={() => deleteCard(card.id)}>
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
+    </Layout>
+  );
+};
 
 export default SignupPage;
