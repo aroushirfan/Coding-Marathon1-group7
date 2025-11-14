@@ -1,1 +1,79 @@
- 
+.recipe-manager {
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #f0f4f8; /* light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.recipe-manager h2 {
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.recipe-manager .form input {
+  display: block;
+  margin-bottom: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.recipe-manager .form input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+.recipe-manager .form button {
+  margin-top: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.recipe-manager .form button:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+}
+
+.recipe-manager ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.recipe-manager li {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-manager li button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.recipe-manager li button:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
