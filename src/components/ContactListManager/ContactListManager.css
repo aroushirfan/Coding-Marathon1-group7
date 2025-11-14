@@ -1,87 +1,46 @@
-import React, { useState } from 'react';
-import Contact from "./Contact";
-import "./ContactListManager.css";
+div { 
+    font-family: Arial, sans-serif;
+    padding: 20px;
 
-function ContactListManager() {
-
-  const [contacts, setContacts] = useState([]);
-  const [form, setForm] = useState({
-    name: "",
-    job_title: "",
-    birthday: "",
-    notes: "",
-    website: "",
-    favorite: false,
-  });
-
-  // your handleChange fixed
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setForm({ 
-      ...form, 
-      [name]: type === "checkbox" ? checked : value 
-    });
-  };
-
-  // your addContact moved to the correct place
-  const addContact = (e) => {
-    e.preventDefault();
-    setContacts([...contacts, { id: Date.now(), ...form }]);
-  };
-
-  return (
-    <div>
-      <h2> Contact List </h2>
-
-      <form onSubmit={addContact}>
-
-        <input
-          name="name"
-          placeholder="name"
-          value={form.name}
-          onChange={handleChange}
-        />
-
-        <input
-          name="job_title"
-          placeholder="Job Title"
-          value={form.job_title}
-          onChange={handleChange}
-        />
-
-        <input
-          name="birthday"
-          type="date"
-          placeholder="date"
-          value={form.birthday}
-          onChange={handleChange}
-        />
-
-        <input
-          name="website"
-          placeholder="website"
-          value={form.website}
-          onChange={handleChange}
-        />
-
-        <input
-          name="notes"
-          placeholder="Notes"
-          value={form.notes}
-          onChange={handleChange}
-        />
-
-        <input
-          name="favorite"
-          type="checkbox"
-          checked={form.favorite}
-          onChange={handleChange}
-        />
-
-        <button>Add me</button>
-      </form>
-    </div>
-  );
 }
 
-export default ContactListManager;
+h2 {
+    margin-bottom: 15px;
+
+}
+form {
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input:not([type="checkbox"]) {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+input[type="checkbox"] {
+  transform: scale(1.3);
+  margin-left: 5px;}
+
+ button {
+  padding: 8px 12px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005fcc;
+}
