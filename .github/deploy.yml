@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Page
         run: npm run deploy
         env:
           GH_PAT: ${{ secrets.GITHUB_TOKEN }}
