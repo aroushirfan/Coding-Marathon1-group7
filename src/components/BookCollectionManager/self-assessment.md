@@ -2,12 +2,25 @@
 Aroush Irfan
 ## 1. Functionality
 - **Does the component meet the requirements?**
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - [ ] Does it handle all the specified features (e.g., adding, removing, or updating books)?
+  
+  - [ ] Are edge cases handled (e.g., empty inputs, duplicate entries)?
+  - [ ] Are there any bugs or unexpected behaviors?
+=======
+=======
+>>>>>>> a3325107b49a9853e55994f488b3cec994ae20a7
   - Does it handle all the specified features (e.g., adding, removing, or updating books)?  
   Yes, it handles adding and deleting and it has additional features to update an already added book and also to move the books up and down in the list.
   - Are edge cases handled (e.g., empty inputs, duplicate entries)?  
   Yes, it handles empty inputs and also duplicate entries.
   - Are there any bugs or unexpected behaviors?  
   Not really.
+<<<<<<< HEAD
+>>>>>>> b0511a6d7f9d1ef3a0fc0a8f36c698391d49f67a
+=======
+>>>>>>> a3325107b49a9853e55994f488b3cec994ae20a7
 
 - **How well does the component integrate with other parts of the application?**
   - Are props and state managed appropriately?  
