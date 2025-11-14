@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "./ContactListManager.css";
 
 function ContactListManager() {
@@ -11,6 +12,7 @@ function ContactListManager() {
     website: "",
     favorite: false,
   });
+  // setForm({ ...form, [name]: type === "checkbox" ? checked : value});
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
